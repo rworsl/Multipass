@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z8ONQnPFDLTxDoxtB7wh/AzhvYQolme5qR5f3T/zDlzqxMpUqh487hiKi2lcv97Sm2Fy3DEQKkGO893mh5c90g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rich\\source\\repos\\MultiPass\\MultiPass\\MultiPass.iOS\\MultiPass.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+  ],
+  "logs": []
+}
