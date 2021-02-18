@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PassGenerator.MainPage"
-             BackgroundColor="#051e3e">
+             BackgroundColor="#1e1f26">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#051e3e</Color>
+            <Color x:Key="Accent">#1e1f26</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 

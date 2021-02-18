@@ -12,3 +12,7 @@ C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Release
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Release\netstandard2.0\PassGenerator.dll
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Release\netstandard2.0\ref\PassGenerator.dll
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Release\netstandard2.0\PassGenerator.pdb
+C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\bin\Release\netstandard2.0\Mono.Android.dll
+C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\bin\Release\netstandard2.0\Mono.Android.pdb
+C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\bin\Release\netstandard2.0\Mono.Android.xml
+C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Release\netstandard2.0\PassGenerator.csproj.CopyComplete

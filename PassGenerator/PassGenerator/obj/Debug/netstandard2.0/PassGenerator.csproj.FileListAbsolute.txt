@@ -5,6 +5,7 @@ C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\bin\Debug\n
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\bin\Debug\netstandard2.0\Mono.Android.dll
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\bin\Debug\netstandard2.0\Mono.Android.pdb
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\PassGenerator.csprojAssemblyReference.cache
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\PassGenerator.AssemblyInfoInputs.cache
@@ -15,4 +16,3 @@ C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\n
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\PassGenerator.dll
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\ref\PassGenerator.dll
 C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\PassGenerator.pdb
-C:\Users\Rich\source\repos\PassGenerator\PassGenerator\PassGenerator\obj\Debug\netstandard2.0\PassGenerator.csprojAssemblyReference.cache

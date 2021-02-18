@@ -1,4 +1,9 @@
-﻿using Android.Content.Res;
+﻿using Android.App;
+using Android.Content;
+using Android.Content.Res;
+using Android.OS;
+using Android.Widget;
+using Java.Nio.FileNio;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,6 +15,7 @@ using Xamarin.Forms;
 
 namespace PassGenerator
 {
+
     public partial class MainPage : ContentPage
     {
         Dictionary<int, string> words = new Dictionary<int, string>();
@@ -203,30 +209,15 @@ namespace PassGenerator
         }
 
 
-
-
-
-
-
         /// <summary>
         /// Loads all the int/string values from a text file into a dictionary
         /// </summary>
         public void LoadDictionary()
         {
-            //var assembly = Assembly.GetExecutingAssembly();
-            //var resourceName = assembly.GetManifestResourceNames()
-            //    .First(name => name.Contains("wordList"));
-            //var tmp = assembly.GetManifestResourceStream(resourceName);
 
-            var assembly = Assembly.GetExecutingAssembly();
-            
-            using (var stream = assembly.GetManifestResourceStream("PassGenerator.Droid.Resources.wordList.txt"))
-            {
+            var stream = Android.App.Application.Context.Assets.Open("wordList.txt");
 
-            }
-
-
-            /*using (var readtextfile = new StreamReader(stream))
+            using (var readtextfile = new StreamReader(stream))
             {
                 string line = null;
                 int number = 0;
@@ -239,7 +230,7 @@ namespace PassGenerator
                     listWord = lineSplit[1];
                     words.Add(number, listWord);
                 }
-            }*/
+            }
         }
 
         /// <summary>
