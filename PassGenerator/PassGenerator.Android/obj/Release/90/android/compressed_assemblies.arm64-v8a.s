@@ -26,7 +26,7 @@
 
 	/* 2: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.word	1993216
+	.word	1996288
 	/* loaded */
 	.byte	0
 	/* data */
@@ -53,7 +53,7 @@
 
 	/* 5: PassGenerator.dll */
 	/* uncompressed_file_size */
-	.word	17408
+	.word	18432
 	/* loaded */
 	.byte	0
 	/* data */
@@ -458,7 +458,7 @@
 
 	/* 50: Xamarin.Essentials.dll */
 	/* uncompressed_file_size */
-	.word	25088
+	.word	25600
 	/* loaded */
 	.byte	0
 	/* data */

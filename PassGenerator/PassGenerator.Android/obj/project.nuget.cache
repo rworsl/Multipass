@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "05b4b+oCbpz43rFBt/a42eeyJKd0BhddXz0HU10f4NhQgh5lle5sKVmjMaxJMozql36tSJOtaMERrDabILY9uA==",
+  "dgSpecHash": "AIT3W6my7r+uAQYTkgZju5K35Ofc+GQAXZfkBxjJ7s1Xb2rOhKRNZBpFcLrJbzYrTicgvFvjUGPqEtBTuhkRbw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rich\\source\\repos\\PassGenerator\\PassGenerator\\PassGenerator.Android\\PassGenerator.Android.csproj",
+  "projectFilePath": "C:\\Users\\Rich\\Desktop\\Projects\\Multipass\\PassGenerator\\PassGenerator.Android\\PassGenerator.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",

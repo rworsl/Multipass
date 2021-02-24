@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nf0qP5o1GCLhwXpIraemXy7oyHudAXiBH6+LWE3dO4siL5mFFADyDVjPsabLkKvjzMcaNW+zIiR38HcPtO1H2w==",
+  "dgSpecHash": "rXXS1wMayFriE5txMCbppYlDeiPFZpo7sYKjfsYAuhzQhWCHwHAGglxF6XphHdL2JiLWBmZjlnt98XCLnaGUrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rich\\source\\repos\\PassGenerator\\PassGenerator\\PassGenerator\\PassGenerator.csproj",
+  "projectFilePath": "C:\\Users\\Rich\\Desktop\\Projects\\Multipass\\PassGenerator\\PassGenerator\\PassGenerator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rich\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Rich\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

@@ -11,6 +11,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
+using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PassGenerator
@@ -23,8 +25,10 @@ namespace PassGenerator
         string password = "";
         public MainPage()
         {
-        InitializeComponent();
-        LoadDictionary();
+            InitializeComponent();
+            Copy.IsEnabled = false;
+            strength.IsEnabled = false;
+            LoadDictionary();
         }
 
         public void ButtonClick(object sender, EventArgs args)
@@ -33,7 +37,66 @@ namespace PassGenerator
             wordCount();
             createWord();
             presentResult();
+            Copy.IsEnabled = true;
+            strength.IsEnabled = true;
         }
+
+        /// <summary>
+        /// Adds the password to the clipboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void copyPassword(object sender, EventArgs args)
+        {
+            Clipboard.SetTextAsync(password);
+            if (Clipboard.HasText)
+            {
+                var text = Clipboard.GetTextAsync();
+                DisplayAlert("Success", string.Format("Your generated passphrase has been copied to the clipboard", text), "OK");
+            }
+        }
+
+
+        public void testStrength(object sender, EventArgs args)
+        {
+            int total = 0;
+            int total2 = 0;
+
+            total += NumberOfCharacters(password);
+
+            total += CountUppercaseLetters(password);
+
+            total += CountLowercaseLetters(password);
+
+            total += CountNumbers(password);
+
+            total += CountSymbols(password);
+
+            total += CountMiddleSymbols(password);
+
+            total += MeetsAllRequirements(password);
+
+            total2 += onlyLetters(password);
+
+            total2 += onlyNumbers(password);
+
+            total2 += checkRepeatCharacters(password);
+
+            total2 += ConsecutiveUpperLetters(password);
+
+            total2 += ConsecutiveLowerLetters(password);
+
+            total2 += ConsecutiveNumbers(password);
+
+            total2 += SequentialLetters(password);
+
+            var finalTotal = total - total2;
+
+            var final = scaledScore(finalTotal);
+
+            Console.WriteLine(final);
+        }
+
 
         /// <summary>
         /// Assembles the suggested password
@@ -98,8 +161,8 @@ namespace PassGenerator
         private string replaceWithNums(string inputWord)
         {
             string outputString = "";
-            int counter = 0;
-            while (counter < 3)
+            int counter = 1;
+            while (outputString.Length != inputWord.Length)
             {
                 foreach (char letter in inputWord)
                 {
@@ -154,7 +217,6 @@ namespace PassGenerator
                         outputString += letter;
                     }
                 }
-                counter += 1;
             }
             return outputString;
         }
@@ -168,7 +230,8 @@ namespace PassGenerator
         {
             string outputString = "";
             int counter = 0;
-            while (counter < 3)
+
+            while (outputString.Length != inputWord.Length)
             {
                 foreach (char letter in inputWord)
                 {
@@ -254,8 +317,339 @@ namespace PassGenerator
         /// </summary>
         private void presentResult()
         {
-            //password = wordNum.ToString();
             outputResult.Text = password;
+        }
+
+
+        /*
+         * 
+         * 
+         * Password strength checking goes below here
+         * 
+         * 
+         */
+
+
+        public double scaledScore(int total)
+        {
+            var Value = total / 2.5;
+            if (Value > 100)
+            {
+                return 100;
+            }
+            else
+            {
+                return Value;
+            }
+        }
+
+        public int NumberOfCharacters(string password)
+        {
+            if (password.Length * 4 > 200)
+            {
+                return 100;
+            }
+            else
+            {
+                return (password.Length * 4);
+            }
+        }
+
+        public int CountUppercaseLetters(string password)
+        {
+            int count = 0;
+            foreach (char i in password)
+            {
+                if (char.IsUpper(i)) count += 1;
+            }
+
+            if (count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                if (((password.Length - count) * 2) > 400)
+                {
+                    return 50;
+                }
+                else
+                {
+                    return (password.Length - count) * 2;
+                }
+            }
+        }
+
+        public int CountLowercaseLetters(string password)
+        {
+            int count = 0;
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (char.IsLower(password[i])) count++;
+            }
+
+            if (count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                if (((password.Length - count) * 2) > 100)
+                {
+                    return 100;
+                }
+                else
+                {
+                    return (password.Length - count) * 2;
+                }
+            }
+        }
+
+        public int CountNumbers(string password)
+        {
+            int count = 0;
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (char.IsDigit(password[i])) count++;
+            }
+
+            if (count * 4 > 50)
+            {
+                return 50;
+            }
+            else
+            {
+                return count * 4;
+            }
+        }
+
+        public int CountSymbols(string password)
+        {
+            int count = 0;
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (char.IsLetterOrDigit(password[i])) count++;
+            }
+
+            if (((password.Length - count) * 6) > 50)
+            {
+                return 50;
+            }
+            else
+            {
+                return (password.Length - count) * 6;
+            }
+        }
+
+        public int CountMiddleSymbols(string password)
+        {
+            var symbols = 0;
+            int count = 0;
+            for (int i = 1; i < password.Length - 1; i++)
+            {
+                if (char.IsLetterOrDigit(password[i])) symbols++;
+            }
+
+            for (int i = 1; i < password.Length - 1; i++)
+            {
+                if (char.IsDigit(password[i])) count++;
+            }
+            var total = (password.Length - 2) - symbols;
+            total += count;
+
+            if (total * 2 > 50)
+            {
+                return 0;
+            }
+            else
+            {
+                return total * 2;
+            }
+        }
+
+        public int MeetsAllRequirements(string password)
+        {
+            int total = 0;
+            if (CountUppercaseLetters(password) > 0)
+            {
+                total += 1;
+            }
+            if (CountLowercaseLetters(password) > 0)
+            {
+                total += 1;
+            }
+            if (CountNumbers(password) > 0)
+            {
+                total += 1;
+            }
+            if (CountSymbols(password) > 0)
+            {
+                total += 1;
+            }
+            if (password.Length > 7)
+            {
+                total += 1;
+            }
+
+            if (total <= 3)
+            {
+                return 0;
+            }
+            else
+            {
+                return total * 2;
+            }
+        }
+
+        public int onlyLetters(string password)
+        {
+            if (((CountUppercaseLetters(password) / 2) + (CountLowercaseLetters(password) / 2)) == password.Length)
+            {
+                if (password.Length > 200)
+                {
+                    return 200;
+                }
+                else
+                {
+                    return password.Length;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int onlyNumbers(string password)
+        {
+            if ((CountNumbers(password) / 4) == password.Length)
+            {
+                if (password.Length > 200)
+                {
+                    return 200;
+                }
+                else
+                {
+                    return password.Length;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int checkRepeatCharacters(string password)
+        {
+            HashSet<char> characters = new HashSet<char>();
+            foreach (char i in password)
+            {
+                characters.Add(i);
+            }
+
+            int originalTotal = password.Length;
+            int newTotal = characters.Count;
+
+            int Result = originalTotal - newTotal;
+
+            return Result > 50 ? 50 : Result;
+        }
+
+        public int ConsecutiveUpperLetters(string password)
+        {
+            int dupes = 0;
+            for (int i = 0; i < password.Length - 1; i++)
+            {
+                if ((Char.IsUpper(password[i + 1])) && (Char.IsUpper(password[i]) == true))
+                {
+                    dupes += 1;
+                }
+            }
+
+            if (dupes * 2 > 50)
+            {
+                return 50;
+            }
+            else
+            {
+                return dupes * 2;
+            }
+        }
+
+        public int ConsecutiveLowerLetters(string password)
+        {
+            int dupes = 0;
+            for (int i = 0; i < password.Length - 1; i++)
+            {
+                if ((Char.IsLower(password[i + 1])) && (Char.IsLower(password[i]) == true))
+                {
+                    dupes += 1;
+                }
+            }
+
+            if (dupes * 2 > 50)
+            {
+                return 50;
+            }
+            else
+            {
+                return dupes * 2;
+            }
+        }
+
+        public int ConsecutiveNumbers(string password)
+        {
+            int dupes = 0;
+            for (int i = 0; i < password.Length - 1; i++)
+            {
+                if ((Char.IsDigit(password[i + 1])) && (Char.IsDigit(password[i]) == true))
+                {
+                    dupes += 1;
+                }
+            }
+
+            if (dupes * 2 > 50)
+            {
+                return 50;
+            }
+            else
+            {
+                return dupes * 2;
+            }
+        }
+
+        public int SequentialLetters(string password)
+        {
+            int dupes = 0;
+            if (password.Length < 2)
+            {
+                return 0;
+            }
+            else
+            {
+                byte[] asciiBytes = Encoding.ASCII.GetBytes(password);
+
+                for (int i = 0; i < password.Length - 1; i++)
+                {
+                    var tmp1 = asciiBytes[i];
+                    var tmp2 = asciiBytes[i + 1];
+
+                    if (tmp1 + 1 == (tmp2))
+                    {
+                        dupes += 1;
+                    }
+                }
+
+                if (dupes * 3 > 50)
+                {
+                    return 50;
+                }
+                else
+                {
+                    return dupes * 3;
+                }
+            }
+
         }
     }
 }
