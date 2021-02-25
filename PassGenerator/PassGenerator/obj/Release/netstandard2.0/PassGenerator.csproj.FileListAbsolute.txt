@@ -34,3 +34,4 @@ C:\Users\Rich\Desktop\Projects\Multipass\PassGenerator\PassGenerator\obj\Release
 C:\Users\Rich\Desktop\Projects\Multipass\PassGenerator\PassGenerator\obj\Release\netstandard2.0\PassGenerator.dll
 C:\Users\Rich\Desktop\Projects\Multipass\PassGenerator\PassGenerator\obj\Release\netstandard2.0\ref\PassGenerator.dll
 C:\Users\Rich\Desktop\Projects\Multipass\PassGenerator\PassGenerator\obj\Release\netstandard2.0\PassGenerator.pdb
+C:\Users\Rich\Desktop\Projects\Multipass\PassGenerator\PassGenerator\obj\Release\netstandard2.0\Strength.xaml.g.cs

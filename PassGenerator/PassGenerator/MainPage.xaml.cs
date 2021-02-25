@@ -1,15 +1,8 @@
-﻿using Android.App;
-using Android.Content;
-using Android.Content.Res;
-using Android.OS;
-using Android.Widget;
-using Java.Nio.FileNio;
+﻿#region main bulk of app
+
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using Xamarin.Essentials;
@@ -23,6 +16,7 @@ namespace PassGenerator
         Dictionary<int, string> words = new Dictionary<int, string>();
         int wordNum = 4;
         string password = "";
+        public static double final = 0;
         public MainPage()
         {
             InitializeComponent();
@@ -56,8 +50,13 @@ namespace PassGenerator
             }
         }
 
+        public async void testStrength(object sender, EventArgs e)
+        {
+            final = getStrengthValue();
+            await Navigation.PushAsync(new Strength());
+        }
 
-        public void testStrength(object sender, EventArgs args)
+        public double getStrengthValue()
         {
             int total = 0;
             int total2 = 0;
@@ -94,9 +93,8 @@ namespace PassGenerator
 
             var final = scaledScore(finalTotal);
 
-            Console.WriteLine(final);
+            return final;
         }
-
 
         /// <summary>
         /// Assembles the suggested password
@@ -320,6 +318,9 @@ namespace PassGenerator
             outputResult.Text = password;
         }
 
+#endregion
+
+        #region Strength Check
 
         /*
          * 
@@ -653,3 +654,5 @@ namespace PassGenerator
         }
     }
 }
+
+#endregion

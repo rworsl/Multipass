@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassGenerator.Strength"
+             BackgroundColor="#1e1f26">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="1.25*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="0.1*" />
+            </Grid.RowDefinitions>
+
+            <!-- Logo place holder -->
+            <StackLayout BackgroundColor="#1e1f26" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,0" VerticalOptions="FillAndExpand">
+                        <Label Text="PassGen v1.0" FontSize="25" TextColor="White"/>
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Progress meter placement -->
+            <ScrollView Grid.Row="1">
+                <Frame Margin="10,0,10,0" BorderColor="#451e3e" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical"   Padding="0,0,0,0" Spacing="10">
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Word count options go in here-->
+                            <Label Text="Approximate calculated strength:" TextColor="Black" />
+                            <ProgressBar x:Name="StrengthMeter" Margin="0,40,0,0" ></ProgressBar>
+                            <Label Grid.Row="1" HorizontalOptions="Center" x:Name="rating" FontSize="35" Text="Fair" TextColor="Black" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+
+            <!-- Progress meter placement -->
+            <ScrollView Grid.Row="2">
+                <Frame Margin="10,0,10,0" BorderColor="#451e3e" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical"   Padding="0,0,0,0" Spacing="10">
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Word count options go in here-->
+                            <Label Text="This is an approximate calculation and should be used with caution. There are many potential issues when it comes to password strength and it's not possible to check them all." TextColor="Red" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

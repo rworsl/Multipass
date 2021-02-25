@@ -978,13 +978,6 @@ module15_managed_to_java_duplicates:
 	.section	.rodata.module16_managed_to_java,"a",@progbits
 	.type	module16_managed_to_java, @object
 module16_managed_to_java:
-	.word	33554434
-	.word	731
-	.size	module16_managed_to_java, 8
-
-	.section	.rodata.module17_managed_to_java,"a",@progbits
-	.type	module17_managed_to_java, @object
-module17_managed_to_java:
 	.word	33554435
 	.word	172
 	.word	33554436
@@ -1027,27 +1020,27 @@ module17_managed_to_java:
 	.word	158
 	.word	33554478
 	.word	159
-	.size	module17_managed_to_java, 168
+	.size	module16_managed_to_java, 168
 
-	.section	.rodata.module17_managed_to_java_duplicates,"a",@progbits
-	.type	module17_managed_to_java_duplicates, @object
-module17_managed_to_java_duplicates:
+	.section	.rodata.module16_managed_to_java_duplicates,"a",@progbits
+	.type	module16_managed_to_java_duplicates, @object
+module16_managed_to_java_duplicates:
 	.word	33554474
 	.word	171
-	.size	module17_managed_to_java_duplicates, 8
+	.size	module16_managed_to_java_duplicates, 8
 
-	.section	.rodata.module18_managed_to_java,"a",@progbits
-	.type	module18_managed_to_java, @object
-module18_managed_to_java:
+	.section	.rodata.module17_managed_to_java,"a",@progbits
+	.type	module17_managed_to_java, @object
+module17_managed_to_java:
 	.word	33554436
 	.word	30
 	.word	33554437
 	.word	29
-	.size	module18_managed_to_java, 16
+	.size	module17_managed_to_java, 16
 
-	.section	.rodata.module19_managed_to_java,"a",@progbits
-	.type	module19_managed_to_java, @object
-module19_managed_to_java:
+	.section	.rodata.module18_managed_to_java,"a",@progbits
+	.type	module18_managed_to_java, @object
+module18_managed_to_java:
 	.word	33554606
 	.word	910
 	.word	33554611
@@ -2028,11 +2021,11 @@ module19_managed_to_java:
 	.word	750
 	.word	33555538
 	.word	870
-	.size	module19_managed_to_java, 3920
+	.size	module18_managed_to_java, 3920
 
-	.section	.rodata.module19_managed_to_java_duplicates,"a",@progbits
-	.type	module19_managed_to_java_duplicates, @object
-module19_managed_to_java_duplicates:
+	.section	.rodata.module18_managed_to_java_duplicates,"a",@progbits
+	.type	module18_managed_to_java_duplicates, @object
+module18_managed_to_java_duplicates:
 	.word	33554615
 	.word	868
 	.word	33554617
@@ -2189,5 +2182,12 @@ module19_managed_to_java_duplicates:
 	.word	747
 	.word	33555516
 	.word	750
-	.size	module19_managed_to_java_duplicates, 624
+	.size	module18_managed_to_java_duplicates, 624
+
+	.section	.rodata.module19_managed_to_java,"a",@progbits
+	.type	module19_managed_to_java, @object
+module19_managed_to_java:
+	.word	33554434
+	.word	731
+	.size	module19_managed_to_java, 8
 

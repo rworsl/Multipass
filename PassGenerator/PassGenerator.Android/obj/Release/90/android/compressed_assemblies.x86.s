@@ -52,7 +52,7 @@
 
 	/* 5: PassGenerator.dll */
 	/* uncompressed_file_size */
-	.long	18432
+	.long	28160
 	/* loaded */
 	.byte	0
 	/* data */
@@ -502,7 +502,7 @@
 
 	/* 55: mscorlib.dll */
 	/* uncompressed_file_size */
-	.long	2054144
+	.long	2054656
 	/* loaded */
 	.byte	0
 	/* data */
